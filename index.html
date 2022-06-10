@@ -1,0 +1,224 @@
+<!DOCTYPE HTML>
+<!--
+	Read Only by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>Chiyun Liu</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+</head>
+
+<body class="is-preload">
+
+	<!-- Header -->
+	<section id="header">
+		<header>
+			<span class="image avatar"><img src="images/unnamed.webp" alt="" /></span>
+			<h1 id="logo"><a href="#">Chiyun Liu</a></h1>
+			<p>B.S. in Computer Science<br />
+				University of Minnesota 2022</p>
+		</header>
+		<nav id="nav">
+			<ul>
+				<li><a href="#one" class="active">About Me</a></li>
+				<!-- <li><a href="#two">Things I Can Do</a></li> -->
+				<li><a href="#three">A Few Accomplishments</a></li>
+				<li><a href="#drone">Drone Simulation</a></li>
+				<li><a href="#spectrogram">Spectrogram</a></li>
+				<li><a href="#data">Database Design</a></li>
+				<li><a href="#cyk">CYK Parser with Context Free Grammar</a></li>
+				<li><a href="#ios">Inventory Tracking App In iOS</a></li>
+				<li><a href="#two" class="active">Things I Enjoy</a></li>
+			</ul>
+		</nav>
+		<footer>
+			<ul class="icons">
+				<li><a href="mailto:chiyun.liu24@gmail.com" class="icon solid fa-envelope"><span
+							class="label">Email</span></a></li>
+			</ul>
+		</footer>
+	</section>
+
+	<!-- Wrapper -->
+	<div id="wrapper">
+
+		<!-- Main -->
+		<div id="main">
+
+			<!-- One -->
+			<section id="one">
+				<div class="image main" data-position="center">
+					<img src="images/cover2.jpg" alt="" />
+				</div>
+				<div class="container">
+					<header class="major">
+						<h2>I'm Chiyun Liu</h2>
+						<p>I enjoy solving problems with programming skills</p>
+					</header>
+					<p>Born in Taiwan, then moved to the US at age 12. Over the years I picked up a few more languages in school other than English, to talk with computers and hope to make daily life easier and more interesting.</p>
+				</div>
+			</section>
+
+
+			<!-- Three -->
+			<section id="three">
+				<div class="container">
+					<h3>A Few Accomplishments</h3>
+					<p>Some of the project I worked on during my academic career at the University of Minnesota or
+						earlier</p>
+					<div class="features">
+						<article>
+							<a style="pointer-events: none; cursor: default;" href="#" class="image"><img
+									src="images/drone.gif" alt=""></a>
+							<div class="inner" id="drone">
+								<h4>Drone Simulation</h4>
+								<p>Developed in the course of Program Design & Development in a group of 4, this project
+									is coded in C++ with a combination of HTML and Javascript to perform a simulation of
+									a delivery system with drones.</p>
+
+							</div>
+						</article>
+						<h5>Entities</h5>
+						<p>This simulation consists of 3 different entities, Drone, Package and Customer, each
+							package is assigned to a customer. The idea is that multiple information of entities are
+							loaded in as a SQL file, created with a composite factory pattern, then the drones will
+							calculate the path to the closest package and traverse to pick up the package and
+							deliver to the customer.</p>
+						<h5>Activity Logs</h5>
+						<p><span class="image left"><img src="images/observe.png" alt="" /></span>While the entities
+							are moving to perform their assigned task, their activities are also recorded using the
+							Observer pattern, which also acts as a notification in the system to manage the delivery
+							status.<br>
+							<br><br>
+							<br><br>
+						</p>
+						<h5>Battery Tracking</h5>
+						<p><span class="image right"><img src="images/batt.jpg" alt="" /></span>Each drone has a
+							certain amount of battery charge that dissipates while moving. When the battery charge
+							goes to 0, the drone will stop moving and drop the package at its location. Then the
+							closest live drone will come by to pick up the dropped package to finish the task. Using
+							the Decorator pattern, we are able to color code the amount of battery charge of each
+							drone during the simulation.
+
+						</p>
+						<h5>Paths</h5>
+						<p><span class="image left"><img src="images/para.jpg" alt="" /></span>The drones can have
+							different movements based on what is assigned in the SQL file, the Beeline, Parabolic and
+							Smart. The Beeline path makes the drone rise to a set altitude while moving 45 degree
+							upwards, move in a straight line towards the package and descend at a 45 degree angle when
+							it reaches the destination. Parabolic path makes the drone rise and move towards the
+							destination in a parabola. The smart path uses A* search algorithm to find the path to get
+							to the destination on the simulated map.</p>
+
+						<article>
+							<a style="pointer-events: none; cursor: default;" href="#" class="image"><img
+									src="images/sa2.wav.png" alt=""></a>
+							<div class="inner" id="spectrogram">
+								<h4>Spectrogram</h4>
+								<p>Spectrogram is a visualization of signal strength over time at different frequencies
+									in a waveform. In the course of Natural Language Processing, I used python to create
+									a Spectrogram of wav files from the TIMIT corpus.
+									This process includes reading the signals in binary, translating the signals to
+									integers and applying a hamming window function then using fourier transform to find
+									strengths in each signal. Finally convert the data into a relative grayscale to
+									create an Spectrogram image of that particular audio file.
+								</p>
+							</div>
+						</article>
+						<figure>
+							<figcaption>The above image is an Spectrogram of the sentence: "She had your dark suit in
+								greasy wash
+								water all year."</figcaption>
+							<audio controls src="images/sa2.wav">
+								Your browser does not support the
+								<code>audio</code> element.
+							</audio>
+						</figure>
+						<article>
+							<a style="pointer-events: none; cursor: default;" href="#" class="image"><img
+									src="images/er.jpg" alt="" /></a>
+							<div class="inner" id="data">
+								<h4>Database design</h4>
+								<p>With a group of 4 in the Course of Database Systems, we designed a database for a
+									hypothetical clinic. With a list of conditions, we first draw out the ER diagram for
+									the system, then mapping its relations. Lastly, we implemented them into a SQL
+									database and tested them with SQL queries.</p>
+							</div>
+						</article>
+						<article>
+							<a style="pointer-events: none; cursor: default;" href="#" class="image"><img
+									src="images/cyk.jpg" alt="" /></a>
+							<div class="inner" id="cyk">
+								<h4>CYK Parser with Context Free Grammar</h4>
+								<p>In the Natural Language Processing course, I made a program with python to distinguish a
+									sentence's "meaning" using Cocke–Younger–Kasami(CYK, or CKY) algorithm, which is a
+									parsing algorithm for context free grammar(CFG). This algorithm is able to take a
+									sentence, determine if it is valid for the given CFG, or parse all possible
+									derivations of the sentence based on the CFG.</p>
+							</div>
+						</article>
+						<article>
+							<a style="pointer-events: none; cursor: default;" href="#" class="image"><img
+									src="images/sort.jpg" alt="" /></a>
+							<div class="inner" id="ios">
+								<h4>Inventory tracking app in iOS</h4>
+								<p>During a course of Mobile App Development in high school, I created an iOS
+									application designed specifically for tracking art supplies in a classroom setting.
+									The idea is for students to be able to borrow supplies from an automatic system that
+									keeps a log on who, when and how many items did the students borrow, and notify the
+									teacher when items need to be returned by the students. </p>
+							</div>
+						</article>
+
+						</p>
+					</div>
+				</div>
+			</section>
+
+			<!-- Two -->
+			<section id="two">
+				<div class="container">
+					<h3>Things I enjoy</h3>
+					<p>We all have somethings we enjoy in our free time that makes who we are</p>
+					<ul class="feature-icons">
+						<li class="icon solid fa-code">Make programs to make life easier</li>
+						<li class="icon solid fa-volleyball">Addicted to Volleyball</li>
+						<li class="icon solid fa-globe">Travel to different places</li>
+						<li class="icon solid fa-book">Read books</li>
+						<li class="icon solid fa-utensils">Cooking and trying new styles of food</li>
+						<li class="icon solid fa-gamepad">Video games</li>
+					</ul>
+				</div>
+			</section>
+
+		</div>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="container">
+				<ul class="copyright">
+					<li>&copy; Chiyun Liu. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.scrollex.min.js"></script>
+	<script src="assets/js/jquery.scrolly.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
